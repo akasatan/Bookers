@@ -1,13 +1,16 @@
+<p id="notice"><%= notice %></p>
 <h2>New book</h2>
 
-<%= form_with model:@book, local:true do |f| %>
-
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-    
-    <h4>Body</h4>
-    <%= f.text_area :body %>
-    
-    <%= f.submit 'Create Book' %>
-
+      <%= form_with model:@book, local:true do |f| %>
+       <div class="field">
+        <h4>title</h4>
+        <%= f.text_field :title %>
+       </div>
+       <div class="field">
+        <h4>body</h4>
+        <%= f.text_area :body %>
+       </div>
+       <div class="field">
+        <%= f.submit 'Create Book' %>
+        </div>
 <% end %>

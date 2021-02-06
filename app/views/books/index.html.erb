@@ -1,5 +1,5 @@
       <div class="all">
-        <p id="notice"></p><!--ここにsuccessfullyの文言が入る-->
+        <p id="notice"><%= notice %></p><!--ここにsuccessfullyの文言が入る-->
         <h1 class="heading" >Books</h1>
       <table>
         <thead><!--テーブルの中のヘッドでTとhead。テーブルの行をグループ化する-->
@@ -24,18 +24,17 @@
       </table>
       <h2>New book</h2>
 
-      <%= form_with model:@book, local:true do |f| %>
+      <%= form_with model: @book, method: post,  local:true do |f| %>
        <div class="field">
-        <label for="book_title">Title</lavel>
-        <!--ラベルタグを使うことでidとかとの紐付けが出来るらしい-->
+        <%= f.label :title, 'Title' %>
         <%= f.text_field :title %>
        </div>
        <div class="field">
-        <lavel for="book_body">Body</lavel>
+        <%= f.label :body, 'Body' %>
         <%= f.text_area :body %>
        </div>
-       <div class="actions">
+       <div class="field">
         <%= f.submit 'Create Book' %>
-       </div>
+        </div>
       <% end %>
      </div>
