@@ -1,5 +1,5 @@
     <body>
-       <p id="notice"></p><!--なんでこのpタグ欲しいん？-->
+       <p id="notice"></p><!--ここにsuccessfullyの文言が入る-->
        <h1 class="heading" >Books</h1>
      <table>
        <thead><!--テーブルの中のヘッドでTとhead。テーブルの行をグループ化する-->
@@ -10,16 +10,28 @@
         </tr>
        </thead>
        <tbody>
-       <!--多分このtrの間にeachをはさむ-->
         <tr>
-         <td>タイトル名</td>
-         <td>Bodyの部分</td>
-         <td>show部分</td>
-         <td>Edit部分</td>
-         <td>Destroy部分</td>
+          <!--@book.title.bodyがメゾットエラーになり申した-->
+         <% @books.each do |book| %>
+         <td><%= book.title %></td>
+         <td><%= book.body %></td>
+         <td><%= link_to "Show", books_path %></td>
+         <td><%= link_to "Edit", edit_book_path(book) %></td>
+         <td><%= link_to "Destroy", book_path(book) %></td>
+         <% end %>
         </tr>
        </tbody>
      </table>
      <h2>New book</h2>
      <p>ここにフォームの記載をする気がする</p>
+     <h2>New book</h2>
+
+     <%= form_with model:@book, local:true do |f| %>
+     <h4>Title</h4>
+     <%= f.text_field :title %>
+     <h4>Body</h4>
+     <%= f.text_area :body %>
+     <%= f.submit 'Create Book' %>
+     <% end %>
+
     </body>
