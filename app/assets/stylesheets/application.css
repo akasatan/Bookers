@@ -127,3 +127,19 @@ li{
   display: list-item;
   list-style: square;
 }
+
+td :hover{
+  background-color: black;
+  color: white;
+}
+a{
+  color: black;
+}
+.hov{
+  color: black;
+  margin-left: 0;
+}
+.hov :hover{
+  background-color: black;
+  color: white;
+}
