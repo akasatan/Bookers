@@ -16,14 +16,23 @@
 *{
   /*0なのか33pxの空きあるかWebページで確認する*/
   padding: 0;
-  box-sizing: border-box
-
+  box-sizing: border-box;
 }
 .all{
   margin: 33px;
+  color: #333;
 }
 #notice{
   color: green;
+}
+h2{
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
 }
 .heading{
   display: block;
@@ -67,7 +76,6 @@ thead{
 tr{
   display: table-row;
   vertical-align: inherit;
-  vertical-align: inherit;
 }
 th{
   padding-bottom: 5px;
@@ -95,4 +103,27 @@ h2{
 }
 label{
   display: block;
+}
+#error_explanation{
+    text-align: left;
+    width: 450px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    border: 2px solid red;
+    background-color: #f0f0f0;
+    padding: 7px 7px 0px 7px;
+}
+.error_m{
+    text-align: left;
+    font-weight: bold;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 5px 5px 15px;
+}
+li{
+  display: list-item;
+  list-style: square;
 }
