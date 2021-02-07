@@ -22,6 +22,12 @@
         </tbody>
       </table>
       <h2>New book</h2>
+      <% if @book.errors.any? %>
+        <p><%= @book.errors.count %> error</p>
+        <%= @book.errors.full_messages.each do |message| %>
+        <%= message %>
+      <% end %>
+      <% end %>
       <%= form_with model: @book, local:true do |f| %>
        <div class="field">
         <%= f.label :Title %>
@@ -33,6 +39,6 @@
        </div>
        <div class="field">
         <%= f.submit 'Create Book' %>
-        </div>
+       </div>
       <% end %>
      </div>
